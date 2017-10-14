@@ -19,9 +19,14 @@ public class CalculatorTest {
 	public void testOneNumeR() {
 		assertEquals(3, Calculator.add("1,2"));
 	}
+
+	@Test
+	public void testMultipleNumbers() {
+		assertEquals(6, Calculator.add("1,2,3"));
+	}
 }
 
-
+	
 /*for(int i ...){
 	if(numbers[] < 1000)
 	continue

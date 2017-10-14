@@ -7,10 +7,11 @@ public class Calculator {
 			return 0;	
 		}
 		else{
-			if(numbers.contains(",")){
-				String theNumbers[] = numbers.split(",");
+			if(numbers.contains(",") || numbers.contains("\n")){
+				String theNumbers[] = numbers.split(",|\n");
 				return sum(theNumbers);
 			}
+			
 			return 1;
 			
 		}

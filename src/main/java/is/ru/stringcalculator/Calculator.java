@@ -3,6 +3,7 @@ package is.ru.stringcalculator;
 public class Calculator {
 
 	public static int add(String numbers) {
+
 		if(numbers.equals("")){
 			return 0;	
 		}
@@ -11,6 +12,8 @@ public class Calculator {
 				String theNumbers[] = numbers.split(",|\n");
 				return sum(theNumbers);
 			}
+						
+
 			
 			return 1;
 			
@@ -23,7 +26,11 @@ public class Calculator {
 		private static int sum(String [] theNumbers){
 			int total = 0;
 			for(String number : theNumbers) {
-				total += toInt(number);
+				int validNumber = Integer.parseInt(number);
+				if(validNumber <= 1000) {
+					total += toInt(number);
+				}
+				
 			}
 			return total;
 		}

@@ -29,22 +29,15 @@ public class CalculatorTest {
 	public void testContainsNewLine() {
 		assertEquals(15, Calculator.add("4,5\n6"));
 	}
-	/*
-	@Test
-	public void testNegativeNumber() throw Exception{
-		try{
-			assertEquals(5, Calculator.add(10,-2,-3));
-		}
-
-		catch(Exception exc){
-			String errorMessage = "Negatives not allowed: -2, -3";
-			assertEquals(errorMessage, exc.getMessage());
-		}
-	}*/
 
 	@Test
 	public void testBiggerThan1K() {
 		assertEquals(7, Calculator.add("1001,2\n5,2000"));
+	}
+
+	@Test
+	public void testDifferentDelimeter() {
+		assertEquals(3, Calculator.add("//;\n1;2"));
 	}
 }	
 

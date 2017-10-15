@@ -3,19 +3,19 @@ package is.ru.stringcalculator;
 public class Calculator {
 
 	public static int add(String numbers) {
-
+		String delimSplit = ",|\n";
 		if(numbers.equals("")){
 			return 0;	
 		}
 		else{
-			if(numbers.contains(",") || numbers.contains("\n")){
-				String theNumbers[] = numbers.split(",|\n");
-				return sum(theNumbers);
+			if(numbers.startsWith("//")) {
+				delimSplit = numbers.substring(2, 3);
+				numbers = numbers.substring(4);
 			}
-						
-
 			
-			return 1;
+			String theNumbers[] = numbers.split(delimSplit);
+				
+			return sum(theNumbers);
 			
 		}
 	}
